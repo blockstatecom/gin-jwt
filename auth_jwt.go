@@ -460,6 +460,7 @@ func (mw *GinJWTMiddleware) LoginHandler(c *gin.Context) {
 			maxage,
 			"/",
 			mw.CookieDomain,
+			http.SameSiteLaxMode,
 			mw.SecureCookie,
 			mw.CookieHTTPOnly,
 		)
@@ -478,6 +479,7 @@ func (mw *GinJWTMiddleware) LogoutHandler(c *gin.Context) {
 			-1,
 			"/",
 			mw.CookieDomain,
+			http.SameSiteLaxMode,
 			mw.SecureCookie,
 			mw.CookieHTTPOnly,
 		)
@@ -543,6 +545,7 @@ func (mw *GinJWTMiddleware) RefreshToken(c *gin.Context) (string, time.Time, err
 			maxage,
 			"/",
 			mw.CookieDomain,
+			http.SameSiteLaxMode,
 			mw.SecureCookie,
 			mw.CookieHTTPOnly,
 		)
